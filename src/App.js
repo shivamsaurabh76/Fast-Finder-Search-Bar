@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import SearchBar from './components/SearchBar';
+import CountryList from './components/CountryList';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [selectedCountry, setSelectedCountry] = useState(null);
+
+  const handleSearch = (country) => {
+    setSelectedCountry(country);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Fast Finder Search Bar</h1>
+      <SearchBar onSearch={handleSearch} />
+      <CountryList country={selectedCountry} />
     </div>
   );
-}
+};
 
 export default App;

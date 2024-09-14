@@ -1,0 +1,75 @@
+.searchBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.searchBar {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 45px;
+    /* Add padding to accommodate icons */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Ensure padding is included in the width */
+}
+
+.input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ddd;
+    border-top: none;
+    background: white;
+    border-radius: 0 0 25px 25px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestionItem {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestionItem:hover {
+    background-color: #f0f0f0;
+}
+
+.searchIcon,
+.micIcon,
+.lensIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #007bff;
+}
+
+.searchIcon {
+    left: 17px;
+}
+
+.micIcon {
+    right: 50px;
+}
+
+.lensIcon {
+    right: 17px;
+}
